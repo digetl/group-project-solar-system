@@ -1,28 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <solar-navbar class="header"/>
+    <div id="body">
+      <index v-if="selectedPage === 'index'" :planets="planets"/>
+      <planet-info v-if="selectedPage === 'planet'" :planet="selectedPlanet">
+      <size-comparison v-if="selectedPage === 'sizeCompare'" :planets="planets"/>
+    </div>
+    <foot-page class="footer"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import {eventBus} from "@/main.js"
 
 export default {
-  name: 'App',
+  name: 'app',
   components: {
-    HelloWorld
-  }
+    "solar-navbar": SolarNavbar,
+    "index": Index,
+    "planet-info": PlanetInfo,
+    "size-comparison": SizeComparison,
+    "foot-page": FootPage
+  },
+  data( {
+    
+  })
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
