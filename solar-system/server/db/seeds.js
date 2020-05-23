@@ -46,6 +46,5 @@ db.planets.insertMany([
     name: "Pluto",
     isPlanet: true,
     moons:["Charon", "Nix", "Hydra", "Kerberos", "Styx"]
-  },
-]);
-
+  }]
+  );
