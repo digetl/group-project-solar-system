@@ -1,6 +1,10 @@
 <template>
-  <div>
+  <div class="info">
     <h2>{{planet.name}}</h2>
+    <p>and all the cool information you want to add</p>
+    <p>Stuff</p>
+    <p>things</p>
+    <p>others</p>
   </div>
 </template>
 
@@ -14,5 +18,7 @@ export default {
 </script>
 
 <style>
-
+.info {
+  margin: 2%;
+}
 </style>

@@ -25,4 +25,14 @@ export default {
 
 <style>
 
+.header {
+  background: rgb(61, 61, 61);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  margin: 5%;
+}
 </style>

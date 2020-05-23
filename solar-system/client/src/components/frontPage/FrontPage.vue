@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="front-page">
     <h2>Front Page</h2>
     <planets-element v-for="(planet, index) in planets" :key="index" :planet="planet"/>
   </div> 
@@ -18,5 +18,7 @@ export default {
 </script>
 
 <style>
-
+#front-page{
+  margin: 2%;
+}
 </style>

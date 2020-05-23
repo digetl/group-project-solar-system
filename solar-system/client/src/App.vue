@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <solar-navbar :planets="planets"/>
-    <div id="body">
+    <div id="app-body">
       <front-page v-if="selectedPage === 'front-page'" :planets="planets"/>
       <planet-info v-if="selectedPage === 'planet-info'" :planet="selectedPlanet"/>  
       <size-comparison v-if="selectedPage === 'sizeCompare'" :planets="planets"/>
@@ -58,5 +58,15 @@ export default {
 </script>
 
 <style>
+
+#app {
+  margin: 0;
+  background-color: black;
+  color: white;
+}
+
+#app-body {
+  margin: 0;
+}
 
 </style>

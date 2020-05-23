@@ -1,5 +1,5 @@
 <template>
-  <p v-on:click="selectPage()">{{planet.name}}</p>
+  <p v-on:click="selectPage()" class="nav-el">{{planet.name}}</p>
 </template>
 
 <script>
@@ -18,5 +18,7 @@ export default {
 </script>
 
 <style>
-
+.nav-el {
+  margin: 2%;
+}
 </style>
