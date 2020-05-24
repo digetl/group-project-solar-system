@@ -1,7 +1,8 @@
 <template>
   <div id="front-page">
     <h2>Front Page</h2>
-    <planets-element v-for="(planet, index) in planets" :key="index" :planet="planet"/>
+    <img src="../../assets/space_rings.png" id="bird-view"/>
+    <!-- <planets-element v-for="(planet, index) in planets" :key="index" :planet="planet"/> -->
   </div> 
 </template>
 
@@ -20,5 +21,14 @@ export default {
 <style>
 #front-page{
   margin: 2%;
+  display: flex;
+}
+
+#bird-view {
+  
+  
+  height: 800px;
+  justify-content: center;
+  align-items: center;
 }
 </style>

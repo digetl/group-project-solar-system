@@ -1,8 +1,13 @@
 <template lang="html">
   <div class="header">
-    <img src="../../assets/space_header.png" id="image-header" >
-    <navbar-element v-for="(planet, index) in planets" :key="index" :planet="planet"/>
-    <h1 class="title" v-on:click="selectPage()">Solar</h1>
+    <img src="../../assets/space_header.png" id="image-header" usemap="#solarmap">
+
+    <map name="solarmap">
+      <area shape="circle" coords="337,300,44" alt="earth">
+    </map>
+
+    <!-- <navbar-element v-for="(planet, index) in planets" :key="index" :planet="planet"/> -->
+    <!-- <h1 class="title" v-on:click="selectPage()">Solar</h1> -->
   </div>
 </template>
 
@@ -29,8 +34,6 @@ export default {
 .header {
   color: black;
   background: white;
-  /* background-image: url("../../assets/space_header.png");
-  background-size: cover; */
   display: flex;
   align-items: center;
   justify-content: space-between;
