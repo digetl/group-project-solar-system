@@ -44,7 +44,6 @@ export default {
     eventBus.$on("selected-page", (page) => {this.selectedPage = page});
 
     eventBus.$on("selected-planet", (planet) => {
-      console.log(planet.name)
       this.selectedPlanet = planet
     });
   },
@@ -70,7 +69,6 @@ export default {
   margin: 0;
   background-image: url("./assets/space_only.png");
   color: white;
-  background-size: cover;
 }
 
 </style>
