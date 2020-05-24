@@ -3,6 +3,11 @@ db.dropDatabase();
 
 db.planets.insertMany([
   {
+    name: "Earth",
+    isPlanet: true,
+    moons:["The Moon"]
+  },
+  {
     name: "Mercury",
     isPlanet: true,
     moons: null
@@ -12,11 +17,7 @@ db.planets.insertMany([
     isPlanet: true,
     moons: null
   },
-  {
-    name: "Earth",
-    isPlanet: true,
-    moons:["The Moon"]
-  },
+
   {
     name: "Mars",
     isPlanet: true,
