@@ -43,12 +43,12 @@ export default {
   methods: {
     selectPlanet(id) {
       eventBus.$emit("selected-page", "planet-info");
-      eventBus.$emit("selected-planet", this.planets[id - 1]);
+      eventBus.$emit("selected-planet", this.planets[id]);
     },
     showInfo(event, id) {
       this.coor = `top: ${event.offsetY}px; left: ${event.offsetX}px`
       this.hover = true;
-      this.selectedPlanet = this.planets[id - 1];
+      this.selectedPlanet = this.planets[id];
     }
   }
 }

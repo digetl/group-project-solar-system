@@ -37,7 +37,7 @@ export default {
       },
       selectPlanet(number) {
       eventBus.$emit("selected-page", "planet-info");
-      eventBus.$emit("selected-planet", this.planets[number - 1]);
+      eventBus.$emit("selected-planet", this.planets[number]);
     }
     }
 }
