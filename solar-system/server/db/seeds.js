@@ -16,7 +16,7 @@ db.planets.insertMany([
     description: "The Sun is the star at the centre of our solar system. It is an almost perfect sphere of super-hot gases whose gravity holds the solar system together. The energy produced by the Sun is essential for life on Earth and is a driving force behind the Earth’s weather. There is a 10-kilometre difference between the Sun’s polar and equatorial diameter. This means it is the closest thing to a perfect sphere that has been observed in nature.",
     images: {
       mainPic:"sun-pic.jpg",
-      hoverGif:"sun.gif"},
+      hoverGif:"sun.gif"}
     
       
 
