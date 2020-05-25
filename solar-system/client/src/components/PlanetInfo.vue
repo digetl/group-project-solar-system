@@ -7,6 +7,7 @@
     <p>Gravity: {{planet.gravity}}g</p>
     <p>Length of day: {{planet.lengthOfDay}}</p>
     <p>Distance from the Sun: {{planet.distanceFromSun}} kilometers</p>
+    <p>Description: {{planet.description}}</p>
   </div>
 </template>
 
