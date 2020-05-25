@@ -10,7 +10,7 @@ export default {
   data() {
     return {
       animation: null,
-      rectWidth: 200
+      rectWidth: 400
     }
   },
   mounted() {
@@ -21,7 +21,7 @@ export default {
   methods: {
     drawRect() {
       // clear canvas
-      this.animation.clearRect(0, 0, 400, 200);
+      this.animation.clearRect(0, 0, 400, 800);
       
       // draw rect
       this.animation.beginPath();
@@ -36,7 +36,7 @@ export default {
 <style>
 #my-canvas {
   height: 400px;
-  width: 200px;
+  width: 800px;
   border: 2px solid rgb(255, 255, 255);
 }
 </style>
