@@ -1,7 +1,7 @@
 <template lang="html">
   <div id="front-page">
     <div>
-    <p v-if="hover" :style="coor">{{selectedPlanet.name}}</p>
+    <p id="info-bird-view" v-if="hover" :style="coor">{{selectedPlanet.name}}</p>
     <img src="../../assets/space_rings.png" id="bird-view" usemap="#bird-view-map"/>
     <map name="bird-view-map">
       <area shape="circle" coords="495, 399, 10" alt="mercury" href="#" v-on:click="selectPlanet(1)"
@@ -68,7 +68,7 @@ export default {
   height: 800px;
 }
 
-p {
+#info-bird-view {
   position: absolute;
 }
 </style>    
