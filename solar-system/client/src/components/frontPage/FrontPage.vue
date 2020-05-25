@@ -46,7 +46,6 @@ export default {
       eventBus.$emit("selected-planet", this.planets[id - 1]);
     },
     showInfo(event, id) {
-      console.log(event)
       this.coor = `top: ${event.offsetY}px; left: ${event.offsetX}px`
       this.hover = true;
       this.selectedPlanet = this.planets[id - 1];
@@ -55,7 +54,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 #front-page{
   position: relative;
