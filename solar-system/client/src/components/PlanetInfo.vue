@@ -1,6 +1,6 @@
 <template>
   <div class="info">
-    <h2>Name:{{planet.name}}</h2>
+    <h2>{{planet.name}}</h2>
     <p>and all the cool information you want to add</p>
     <p>Stuff</p>
     <p>things</p>

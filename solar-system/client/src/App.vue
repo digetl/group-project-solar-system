@@ -6,13 +6,14 @@
       
       <div>
     	  <div class="small-stars" v-for="(star, index) in smallStars" :key="index" :style="star"></div>
-      	<div class="medium-stars " v-for="(star, index) in mediumStars" :key="index + 100" :style="star"></div>
+      	<div class="medium-stars" v-for="(star, index) in mediumStars" :key="index + 100" :style="star"></div>
     	  <div class="large-stars" v-for="(star, index) in largeStars" :key="index + 200" :style="star"></div>
       </div>
 
       <front-page v-if="selectedPage === 'front-page'" :planets="planets"/>
       <planet-info v-if="selectedPage === 'planet-info'" :planet="selectedPlanet"/>  
       <size-comparison v-if="selectedPage === 'sizeCompare'" :planets="planets"/>
+      <gravity-animation v-if="selectedPage === 'gravity-animation'" :planets="planets"/>
     </div>
     <solar-footer class="footer"/>
   </div>
@@ -25,7 +26,8 @@ import FrontPage from "@/components/frontPage/FrontPage";
 import PlanetInfo from "@/components/PlanetInfo";
 import SizeComparison from "@/components/SizeComparison";
 import SolarFooter from "@/components/SolarFooter";
-import Solar from "./services/Solar.js"
+import Solar from "./services/Solar.js";
+import GravityAnimation from "@/components/GravityAnimation.vue"
 
 export default {
   name: 'app',
@@ -34,13 +36,15 @@ export default {
     "front-page": FrontPage,
     "planet-info": PlanetInfo,
     "size-comparison": SizeComparison,
-    "solar-footer": SolarFooter
+    "solar-footer": SolarFooter,
+    "gravity-animation": GravityAnimation
   },
   data() {
     return {
       planets: [],
       selectedPlanet: null,
-      selectedPage: "front-page",
+      // selectedPage: "front-page",
+      selectedPage: "gravity-animation",
       smallStars: [],
       mediumStars: [],
       largeStars: []
@@ -56,16 +60,9 @@ export default {
     });
 
     // create and randomly place stars on the background
-
-    for(let i=0; i<100; i++) {
+    for(let i=0; i<70; i++) {
       this.smallStars.push(this.newStar());
-    };
-
-    for(let i=0; i<100; i++) {
       this.mediumStars.push(this.newStar());
-    };
-
-    for(let i=0; i<100; i++) {
       this.largeStars.push(this.newStar());
     };
   },
@@ -109,12 +106,12 @@ export default {
   color: white;
 
 
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#2d343d+0,24272a+36,0b0f11+100 */
-background: #2d343d; /* Old browsers */
-background: -moz-radial-gradient(center, ellipse cover,  #2d343d 0%, #24272a 36%, #0b0f11 100%); /* FF3.6-15 */
-background: -webkit-radial-gradient(center, ellipse cover,  #2d343d 0%,#24272a 36%,#0b0f11 100%); /* Chrome10-25,Safari5.1-6 */
-background: radial-gradient(ellipse at center,  #2d343d 0%,#24272a 36%,#0b0f11 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d343d', endColorstr='#0b0f11',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#2d343d+0,24272a+36,0b0f11+100 */
+  background: #2d343d; /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover,  #2d343d 0%, #24272a 36%, #0b0f11 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover,  #2d343d 0%,#24272a 36%,#0b0f11 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center,  #2d343d 0%,#24272a 36%,#0b0f11 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d343d', endColorstr='#0b0f11',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 .small-stars {
@@ -163,17 +160,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d343d', end
     background: rgba(255, 255, 255, 0);
     animation-timing-function: ease-in;
   }
-  60% {
-    transform: scale(0.8, 0.8);
+  50% {
+    transform: scale(1, 1);
     background: rgba(255,255,255,1);
     animation-timing-function: ease-out;
   }
-  80% {
-    background: rgba(255,255,255,0.00);
-    transform: scale(1, 1);
-  }
   100% {
-    background: rgba(255,255,255,0.0);
+    background: rgba(255,255,255,0);
     transform: scale(1, 1);
   }
 }
