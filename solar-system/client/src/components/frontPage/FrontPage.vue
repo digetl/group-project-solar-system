@@ -1,18 +1,24 @@
 <template lang="html">
   <div id="front-page">
-    <h2>Front Page</h2>
+    <div>
+    <p v-if="hover" :style="coor">{{selectedPlanet.name}}</p>
     <img src="../../assets/space_rings.png" id="bird-view" usemap="#bird-view-map"/>
     <map name="bird-view-map">
-      <area shape="circle" coords="522, 409, 10" alt="mercury" v-on:click="selectPlanet(1)" href="https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_areamap">
-      <area shape="circle" coords="335, 335, 50" alt="venus" v-on:click="selectPlanet(2)" href="https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_areamap">
-      <area shape="circle" coords="420, 78, 15" alt="earth" v-on:click="selectPlanet(3)">
-      <area shape="circle" coords="457, 78, 12" alt="mars" v-on:click="selectPlanet(4)">
-      <area shape="circle" coords="531, 78, 30" alt="jupiter" v-on:click="selectPlanet(5)">
-      <area shape="circle" coords="606, 78, 25" alt="saturn" v-on:click="selectPlanet(6)">
-      <area shape="circle" coords="674, 78, 20" alt="uranus" v-on:click="selectPlanet(7)">
-      <area shape="circle" coords="726, 78, 15" alt="neptune" v-on:click="selectPlanet(8)">
+      <area shape="circle" coords="495, 399, 10" alt="mercury" href="#" v-on:click="selectPlanet(1)"
+        v-on:mouseover="showInfo($event, 1)" 
+        v-on:mouseleave="hover = false">
+      <area shape="circle" coords="303, 283, 25" alt="venus" href="#" v-on:click="selectPlanet(2)">
+      <area shape="circle" coords="231, 483, 27" alt="earth" href="#" v-on:click="selectPlanet(3)">
+      <area shape="circle" coords="600, 409, 16" alt="mars" href="#" v-on:click="selectPlanet(4)">
+      <area shape="circle" coords="528, 191, 57" alt="jupiter" href="#" v-on:click="selectPlanet(5)">
+      <area shape="circle" coords="246, 646, 49" alt="saturn" href="#" v-on:click="selectPlanet(6)">
+      <area shape="circle" coords="625, 617, 38" alt="uranus" href="#" v-on:click="selectPlanet(7)">
+      <area shape="circle" coords="124, 145, 33" alt="neptune" href="#" v-on:click="selectPlanet(8)" 
+        v-on:mouseover="showInfo($event, 8)" 
+        v-on:mouseleave="hover = false">
       <!-- <area shape="circle" coords="337, 78, 10" alt="pluto" v-on:click="selectPlanet(9)"> -->
     </map>
+    </div>
     <!-- <planets-element v-for="(planet, index) in planets" :key="index" :planet="planet"/> -->
   </div> 
 </template>
@@ -27,10 +33,23 @@ export default {
   components: {
     "planets-element": PlanetsElement
   },
+  data() {
+    return {
+      selectedPlanet: null,
+      hover: false,
+      coor: ""
+    }
+  },
   methods: {
-    selectPlanet(number) {
+    selectPlanet(id) {
       eventBus.$emit("selected-page", "planet-info");
-      eventBus.$emit("selected-planet", this.planets[number - 1]);
+      eventBus.$emit("selected-planet", this.planets[id - 1]);
+    },
+    showInfo(event, id) {
+      console.log(event)
+      this.coor = `top: ${event.offsetY}px; left: ${event.offsetX}px`
+      this.hover = true;
+      this.selectedPlanet = this.planets[id - 1];
     }
   }
 }
@@ -39,13 +58,17 @@ export default {
 <style scoped>
 
 #front-page{
-  margin: 2%;
-  /* display: flex; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #bird-view {
   height: 800px;
-  /* justify-content: center; */
-  align-items: center;
+}
+
+p {
+  position: absolute;
 }
 </style>    
