@@ -21,8 +21,8 @@
 
 <script>
 import {eventBus} from "@/main.js";
-import SolarNavbar from "@/components/navbar/SolarNavbar";
-import FrontPage from "@/components/frontPage/FrontPage";
+import SolarNavbar from "@/components/SolarNavbar";
+import FrontPage from "@/components/FrontPage";
 import PlanetInfo from "@/components/PlanetInfo";
 import SizeComparison from "@/components/SizeComparison";
 import SolarFooter from "@/components/SolarFooter";

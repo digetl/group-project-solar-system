@@ -1,7 +1,6 @@
 <template lang="html">
   <div class="header">
-    <img src="../../assets/space_header.png" id="image-header" usemap="#solarmap"/>
-
+    <img src="../assets/space_header.png" id="image-header" usemap="#solarmap"/>
     <map name="solarmap">
       <area shape="circle" coords="267, 77, 50" alt="sun" v-on:click="selectPage()" href="#">
       <area shape="circle" coords="337, 77, 8" alt="mercury" v-on:click="selectPlanet(1)" href="#">
@@ -15,22 +14,15 @@
       <area shape="circle" coords="726, 77, 17" alt="neptune" v-on:click="selectPlanet(8)" href="#">
       <!-- <area shape="circle" coords="337, 78, 10" alt="pluto" v-on:click="selectPlanet(9)"> -->
     </map>
-
-    <!-- <navbar-element v-for="(planet, index) in planets" :key="index" :planet="planet"/> -->
-    <!-- <h1 class="title" v-on:click="selectPage()">Solar</h1> -->
   </div>
 </template>
 
 <script>
 import {eventBus} from "@/main.js";
-import NavbarElement from './NavbarElement.vue';
 
 export default {
     name:"solar-navbar",
     props: ["planets"],
-    components: {
-      "navbar-element": NavbarElement
-    },
     methods: {
       selectPage() {
         eventBus.$emit("selected-page", "front-page");

@@ -2,7 +2,7 @@
   <div id="front-page">
     <div>
     <img id="info-bird-view" v-if="hover" :style="coor" :src="imageLink"/>
-    <img src="../../assets/space_rings.png" id="bird-view" usemap="#bird-view-map"/>
+    <img src="../assets/space_rings_2.png" id="bird-view" usemap="#bird-view-map"/>
     <map name="bird-view-map">
       <area shape="circle" coords="495, 399, 10" alt="mercury" href="#" v-on:click="selectPlanet(1)"
         v-on:mouseover="showInfo($event, 1)" 
@@ -31,20 +31,15 @@
       <!-- <area shape="circle" coords="337, 78, 10" alt="pluto" v-on:click="selectPlanet(9)"> -->
     </map>
     </div>
-    <!-- <planets-element v-for="(planet, index) in planets" :key="index" :planet="planet"/> -->
   </div> 
 </template>
 
 <script>
 import {eventBus} from "@/main.js"
-import PlanetsElement from "./PlanetElement"
 
 export default {
   name: "front-page",
   props: ["planets"],
-  components: {
-    "planets-element": PlanetsElement
-  },
   data() {
     return {
       selectedPlanet: null,
@@ -59,10 +54,15 @@ export default {
       eventBus.$emit("selected-planet", this.planets[id]);
     },
     showInfo(event, id) {
-      this.coor = `top: ${event.offsetY}px; left: ${event.offsetX}px`
+
+      let heightOffset = 0;
+      if(event.offsetY >= 520 ) {heightOffset = -110}
+      if(event.offsetY <= 220) {heightOffset = 110}
+
+      this.coor = `top: ${event.offsetY - 200 + heightOffset}px; left: ${event.offsetX - 100}px`
       this.hover = true;
       this.selectedPlanet = this.planets[id];
-      this.imageLink = require(`../../assets/${this.selectedPlanet.images.hoverGif}`);
+      this.imageLink = require(`../assets/${this.selectedPlanet.images.hoverGif}`);
     } 
   }
 }
@@ -86,6 +86,6 @@ export default {
   height: 400px;
   border: solid;
   border-color: white;
-
+  border-radius: 5px;
 }
 </style>    
