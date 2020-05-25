@@ -5,11 +5,11 @@ db.planets.insertMany([
   {
     name: "Sun",
     isPlanet: false,
-    moons: null,
+    moons: [],
     massRelativeToEarth: 332946,
     diameter: 1390000,
     gravity: 274,   
-    legnthOfDay: 0,
+    lengthOfDay: 0,
     distanceFromSun: 0,
     orbitalPeriod: 0,
     meanTemp: 5778
@@ -18,11 +18,11 @@ db.planets.insertMany([
   {
     name: "Mercury",
     isPlanet: true,
-    moons: null,
+    moons: [],
     massRelativeToEarth: 0.0553,
     diameter: 4879,
     gravity: 3.7,   
-    legnthOfDay: 4222.6,
+    lengthOfDay: 4222.6,
     distanceFromSun: 57.9,
     orbitalPeriod: 87.97,
     meanTemp: 167
@@ -30,11 +30,11 @@ db.planets.insertMany([
   {
     name: "Venus",
     isPlanet: true,
-    moons: null,
+    moons: [],
     massRelativeToEarth: 0.815,
     diameter: 12104,
     gravity: 8.9,   
-    legnthOfDay: 2802,
+    lengthOfDay: 2802,
     distanceFromSun: 108.2,
     orbitalPeriod: 224.70,
     meanTemp: 464
@@ -46,7 +46,7 @@ db.planets.insertMany([
     massRelativeToEarth: 1,
     diameter: 12104,
     gravity: 9.8,   
-    legnthOfDay: 24.6,
+    lengthOfDay: 24.6,
     distanceFromSun: 149.6,
     orbitalPeriod: 365.2,
     meanTemp: 15
@@ -59,7 +59,7 @@ db.planets.insertMany([
     massRelativeToEarth: 0.107,
     diameter: 3475,
     gravity: 1.6,   
-    legnthOfDay: 24.7,
+    lengthOfDay: 24.7,
     distanceFromSun: 227.9,
     orbitalPeriod: 686.98,
     meanTemp: -65
@@ -71,7 +71,7 @@ db.planets.insertMany([
     massRelativeToEarth: 317.8,
     diameter: 142984,
     gravity: 23.1,   
-    legnthOfDay: 9.9,
+    lengthOfDay: 9.9,
     distanceFromSun: 778.6,
     orbitalPeriod: 4332.82,
     meanTemp: -110
@@ -83,7 +83,7 @@ db.planets.insertMany([
     massRelativeToEarth: 95.2,
     diameter: 120536,
     gravity: 9,   
-    legnthOfDay: 10.7,
+    lengthOfDay: 10.7,
     distanceFromSun: 1433.5,
     orbitalPeriod: 10747,
     meanTemp: -140
@@ -95,7 +95,7 @@ db.planets.insertMany([
     massRelativeToEarth: 14.5,
     diameter: 51118,
     gravity: 8.7,   
-    legnthOfDay: 17.2,
+    lengthOfDay: 17.2,
     distanceFromSun: 2872.5,
     orbitalPeriod: 30589,
     meanTemp: -195
@@ -107,7 +107,7 @@ db.planets.insertMany([
     massRelativeToEarth: 17.1,
     diameter: 49528,
     gravity: 11,   
-    legnthOfDay: 16.4,
+    lengthOfDay: 16.4,
     distanceFromSun: 4495.1,
     orbitalPeriod: 59800,
     meanTemp: -200
@@ -119,7 +119,7 @@ db.planets.insertMany([
     massRelativeToEarth: 0.0025,
     diameter: 2370,
     gravity: 0.7,   
-    legnthOfDay: 153.3,
+    lengthOfDay: 153.3,
     distanceFromSun: 5906.4,
     orbitalPeriod: 90560,
     meanTemp: -225
@@ -127,11 +127,11 @@ db.planets.insertMany([
   {
     name: "The Moon",
     isPlanet: false,
-    moons:null,
+    moons: [],
     massRelativeToEarth: 0.12,
     diameter: 3475,
     gravity: 1.6,   
-    legnthOfDay: 708.7,
+    lengthOfDay: 708.7,
     distanceFromSun: 148,
     orbitalPeriod: 27.3,
     meanTemp: -225
