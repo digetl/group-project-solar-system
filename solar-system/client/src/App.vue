@@ -5,15 +5,9 @@
     <div id="app-body">
       
       <div>
-<<<<<<< HEAD
     	  <div class="small-stars" v-for="(star, index) in smallStars" :key="index" :style="star"></div>
       	<div class="medium-stars" v-for="(star, index) in mediumStars" :key="index + 100" :style="star"></div>
     	  <div class="large-stars" v-for="(star, index) in largeStars" :key="index + 200" :style="star"></div>
-=======
-    	<div class="small-stars" v-for="(star, index) in smallStars" :key="index" :style="star"></div>
-    	<div class="medium-stars " v-for="(star, index) in mediumStars" :key="index + 100" :style="star"></div>
-    	<div class="large-stars" v-for="(star, index) in largeStars" :key="index + 200" :style="star"></div>
->>>>>>> develop
       </div>
 
       <front-page v-if="selectedPage === 'front-page'" :planets="planets"/>

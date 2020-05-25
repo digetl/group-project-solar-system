@@ -62,7 +62,7 @@ export default {
       this.coor = `top: ${event.offsetY}px; left: ${event.offsetX}px`
       this.hover = true;
       this.selectedPlanet = this.planets[id];
-      this.imageLink = require(`../../assets/${this.selectedPlanet.images.hoverGif}`)
+      this.imageLink = require(`../../assets/${this.selectedPlanet.images.hoverGif}`);
     } 
   }
 }
