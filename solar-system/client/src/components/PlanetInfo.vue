@@ -1,14 +1,18 @@
 <template>
-  <div class="info">
-    <h2>Name: {{planet.name}}</h2>
-    <p v-if="planet.moons.length">Number of Moons: {{planet.moons.length}}</p>
-    <p>Mass: {{planet.massRelativeToEarth}} relative to Earth</p>
-    <p>Diameter: {{planet.diameter}} kilometers</p>
-    <p>Gravity: {{planet.gravity}}g</p>
-    <p>Length of day: {{planet.lengthOfDay}}</p>
-    <p>Distance from the Sun: {{planet.distanceFromSun}} kilometers</p>
-    <p>Description: {{planet.description}}</p>
-  </div>
+    <div class="info">
+        <div class="column1">
+          <img id="planet-pic" :src="require(`../assets/${planet.images.mainPic}`)">
+        </div>
+          <div class="column2">
+              <h3>{{planet.description}}</h3>
+              <p v-if="planet.moons.length">Number of Moons: <strong>{{planet.moons.length}}</strong></p>
+              <p>Mass: <strong>{{planet.massRelativeToEarth}} relative to Earth</strong></p>
+              <p>Diameter: <strong>{{planet.diameter.toLocaleString()}} kilometers</strong></p>
+              <p>Gravity: <strong>{{planet.gravity}} g</strong></p>
+              <p>Length of day: <strong>{{planet.lengthOfDay}} hours</strong></p>
+              <p>Distance from the Sun: <strong>{{planet.distanceFromSun.toLocaleString()}} million kilometers</strong></p> 
+          </div>
+    </div>
 </template>
 
 <script>
@@ -21,7 +25,27 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 .info {
-  margin: 2%;
+  position: relative;
+  padding: 6% 3%;
+  display: flex;
+  align-items: flex-start;
+  font-family: Roboto,sans-serif;
+  /* background-color: black; */
+
+}
+.column1 {
+  flex: 30%;
+}
+.column2 {
+  padding:0 2%;
+  flex: 70%;
+}
+
+#planet-pic {
+  display: flex;
+  align-items: flex-end;
+  height: 400px;
 }
 </style>
