@@ -1,7 +1,9 @@
 <template>
   <div class="solar-footer">
       <p>Links:</p>
-      <p v-on:click="selectPage()" href="#">Size comparison</p>
+      <p v-on:click="selectSize()" href="#">Size comparison</p>
+      <p v-on:click="selectQuiz()" href="#">Quiz</p>
+
   </div>
 </template>
 
@@ -13,8 +15,12 @@ import {eventBus} from "@/main.js"
 export default {
 
     methods: {
-      selectPage() {
+      selectSize() {
         eventBus.$emit("selected-page", "size-comparison");
+      },
+
+      selectQuiz() {
+        eventBus.$emit("selected-page", "quiz");
       }
     }
 }
