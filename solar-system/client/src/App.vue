@@ -59,13 +59,7 @@ export default {
 
     for(let i=0; i<100; i++) {
       this.smallStars.push(this.newStar());
-    };
-
-    for(let i=0; i<100; i++) {
       this.mediumStars.push(this.newStar());
-    };
-
-    for(let i=0; i<100; i++) {
       this.largeStars.push(this.newStar());
     };
   },
@@ -159,22 +153,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d343d', end
 
 @keyframes twinkle {
   0% {
-    transform: scale(1, 1);
     background: rgba(255, 255, 255, 0);
     animation-timing-function: ease-in;
   }
-  60% {
-    transform: scale(0.8, 0.8);
+  50% {
     background: rgba(255,255,255,1);
     animation-timing-function: ease-out;
   }
-  80% {
-    background: rgba(255,255,255,0.00);
-    transform: scale(1, 1);
-  }
   100% {
     background: rgba(255,255,255,0.0);
-    transform: scale(1, 1);
   }
 }
 
