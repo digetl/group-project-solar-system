@@ -158,18 +158,15 @@ export default {
 
 @keyframes twinkle {
   0% {
-    /* // transform: scale(1, 1); */
     background: rgba(255, 255, 255, 0);
     animation-timing-function: ease-in;
   }
   50% {
-    /* // transform: scale(1, 1); */
     background: rgba(255,255,255,1);
     animation-timing-function: ease-out;
   }
   100% {
     background: rgba(255,255,255,0);
-    /* // transform: scale(1, 1); */
   }
 }
 
