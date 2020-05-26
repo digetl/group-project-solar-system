@@ -58,8 +58,8 @@ export default {
   },
   methods: {
     selectPlanet(id) {
-      // eventBus.$emit("selected-page", "planet-info");
-      // eventBus.$emit("selected-planet", this.planets[id]);
+      eventBus.$emit("selected-page", "planet-info");
+      eventBus.$emit("selected-planet", this.planets[id]);
     },
     showInfo(event, id) {
       console.log(event);
