@@ -60,7 +60,7 @@ export default {
     });
 
     // create and randomly place stars on the background
-    for(let i=0; i<70; i++) {
+    for(let i=0; i<100; i++) {
       this.smallStars.push(this.newStar());
       this.mediumStars.push(this.newStar());
       this.largeStars.push(this.newStar());
@@ -112,6 +112,8 @@ export default {
   background: -webkit-radial-gradient(center, ellipse cover,  #2d343d 0%,#24272a 36%,#0b0f11 100%); /* Chrome10-25,Safari5.1-6 */
   background: radial-gradient(ellipse at center,  #2d343d 0%,#24272a 36%,#0b0f11 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d343d', endColorstr='#0b0f11',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+  background-size: auto;
 }
 
 .small-stars {
@@ -156,18 +158,18 @@ export default {
 
 @keyframes twinkle {
   0% {
-    transform: scale(1, 1);
+    /* // transform: scale(1, 1); */
     background: rgba(255, 255, 255, 0);
     animation-timing-function: ease-in;
   }
   50% {
-    transform: scale(1, 1);
+    /* // transform: scale(1, 1); */
     background: rgba(255,255,255,1);
     animation-timing-function: ease-out;
   }
   100% {
     background: rgba(255,255,255,0);
-    transform: scale(1, 1);
+    /* // transform: scale(1, 1); */
   }
 }
 
