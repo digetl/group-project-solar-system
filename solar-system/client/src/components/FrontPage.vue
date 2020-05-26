@@ -2,11 +2,7 @@
   <div id="front-page">
     <div>
     <img id="info-bird-view" v-if="hover" :style="coor" :src="imageLink"/>
-<<<<<<< HEAD:solar-system/client/src/components/FrontPage.vue
-    <img src="../assets/space_rings_2.png" id="bird-view" usemap="#bird-view-map"/>
-=======
-    <img src="../../assets/planets_birds-01.png" id="bird-view" usemap="#bird-view-map"/>
->>>>>>> develop:solar-system/client/src/components/frontPage/FrontPage.vue
+    <img src="../assets/planets_birds-01.png" id="bird-view" usemap="#bird-view-map"/>
     <map name="bird-view-map">
       <area shape="circle" coords="405, 405, 68" alt="sun" href="#" v-on:click="selectPlanet(0)"
         v-on:mouseover="showInfo($event, 0)" 
@@ -61,20 +57,12 @@ export default {
       eventBus.$emit("selected-planet", this.planets[id]);
     },
     showInfo(event, id) {
-<<<<<<< HEAD:solar-system/client/src/components/FrontPage.vue
-=======
-      console.log(event);
->>>>>>> develop:solar-system/client/src/components/frontPage/FrontPage.vue
 
       let heightOffset = 0;
       if(event.offsetY >= 520 ) {heightOffset = -110}
       if(event.offsetY <= 220) {heightOffset = 110}
 
-<<<<<<< HEAD:solar-system/client/src/components/FrontPage.vue
-      this.coor = `top: ${event.offsetY - 200 + heightOffset}px; left: ${event.offsetX - 100}px`
-=======
       this.coor = `top: ${event.offsetY - 200 + heightOffset}px; left: ${event.pageX + 30}px`
->>>>>>> develop:solar-system/client/src/components/frontPage/FrontPage.vue
       this.hover = true;
       this.selectedPlanet = this.planets[id];
       this.imageLink = require(`../assets/${this.selectedPlanet.images.hoverGif}`);
@@ -93,6 +81,7 @@ export default {
 }
 
 #bird-view {
+  margin: 5%;
   height: 800px;
 }
 
@@ -101,9 +90,6 @@ export default {
   height: 400px;
   border: solid;
   border-color: white;
-<<<<<<< HEAD:solar-system/client/src/components/FrontPage.vue
   border-radius: 5px;
-=======
->>>>>>> develop:solar-system/client/src/components/frontPage/FrontPage.vue
 }
 </style>    

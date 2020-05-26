@@ -1,13 +1,12 @@
 <template>
   <div id="app">
-    
     <solar-navbar :planets="planets"/>
+
     <div id="app-body">
-      
       <div>
     	  <div class="small-stars" v-for="(star, index) in smallStars" :key="index" :style="star"></div>
-      	<div class="medium-stars" v-for="(star, index) in mediumStars" :key="index + 100" :style="star"></div>
-    	  <div class="large-stars" v-for="(star, index) in largeStars" :key="index + 200" :style="star"></div>
+      	<div class="medium-stars" v-for="(star, index) in mediumStars" :key="index + mediumStars.length" :style="star"></div>
+    	  <div class="large-stars" v-for="(star, index) in largeStars" :key="index + 2 * largeStars.length" :style="star"></div>
       </div>
 
       <front-page v-if="selectedPage === 'front-page'" :planets="planets"/>
@@ -51,15 +50,14 @@ export default {
   },
   mounted() {
     this.fetchSolar();
-    
-    eventBus.$on("selected-page", (page) => {this.selectedPage = page});
 
+    eventBus.$on("selected-page", (page) => {this.selectedPage = page});
     eventBus.$on("selected-planet", (planet) => {
       this.selectedPlanet = planet
     });
 
     // create and randomly place stars on the background
-    for(let i=0; i<100; i++) {
+    for(let i=0; i<200; i++) {
       this.smallStars.push(this.newStar());
       this.mediumStars.push(this.newStar());
       this.largeStars.push(this.newStar());
@@ -87,11 +85,14 @@ export default {
 </script>
 
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 #app {
   margin: 0;
 	padding: 0;
   height: 100%;
 	width: 100%;
+  font-family: Roboto,sans-serif;
 }
 
 #app-body {
@@ -119,9 +120,6 @@ export default {
   height: 1px;
   border-radius: 50%;
   background: rgb(255, 255, 255);
-  /* box-shadow: 
-    0 0 1px 1px rgb(255, 255, 255),
-    0 0 2px 2px rgb(255, 188, 186); */
 }
 .medium-stars {
   margin: 0;
@@ -131,10 +129,6 @@ export default {
   height: 3px;
   border-radius: 50%;
   background: rgb(255, 255, 255);
-
-  /* box-shadow: 
-    0 0 1px 1px rgb(255, 255, 255),
-    0 0 3px 3px rgb(186, 255, 252); */
 }
 
 .large-stars {
@@ -145,10 +139,6 @@ export default {
   height: 5px;
   border-radius: 50%;
   background: rgb(255, 255, 255);
-
-  /* box-shadow: 
-    0 0 2px 2px rgb(255, 255, 255),
-    0 0 4px 4px rgb(255, 250, 186); */
 }
 
 @keyframes twinkle {
