@@ -5,6 +5,7 @@
       <front-page v-if="selectedPage === 'front-page'" :planets="planets"/>
       <planet-info v-if="selectedPage === 'planet-info'" :planet="selectedPlanet"/>  
       <size-comparison v-if="selectedPage === 'sizeCompare'" :planets="planets"/>
+      <quiz v-if="selectedPage === 'quiz'" :planets="planets"/>
     </div>
     <solar-footer class="footer"/>
   </div>
@@ -17,7 +18,8 @@ import FrontPage from "@/components/frontPage/FrontPage";
 import PlanetInfo from "@/components/PlanetInfo";
 import SizeComparison from "@/components/SizeComparison";
 import SolarFooter from "@/components/SolarFooter";
-import Solar from "./services/Solar.js"
+import Solar from "./services/Solar.js";
+import Quiz from "@/components/Quiz.vue";
 
 export default {
   name: 'app',
@@ -26,13 +28,15 @@ export default {
     "front-page": FrontPage,
     "planet-info": PlanetInfo,
     "size-comparison": SizeComparison,
-    "solar-footer": SolarFooter
+    "solar-footer": SolarFooter,
+    "quiz": Quiz
   },
   data() {
     return {
       planets: [],
       selectedPlanet: null,
-      selectedPage: "front-page"
+      selectedPage: "quiz",
+      answers: []
     }
   }
   ,

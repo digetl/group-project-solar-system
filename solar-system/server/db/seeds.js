@@ -47,4 +47,23 @@ db.planets.insertMany([
     isPlanet: true,
     moons:["Charon", "Nix", "Hydra", "Kerberos", "Styx"]
   }]
+
+  db.questions.insertMany([
+
+      {
+    question: "What is the closest planet to the Sun?",
+    answer: "Mercury"
+      } 
+
+      {
+        question: "Have humans been on Mars?",
+        answer: "No"
+      }
+
+      {
+        question: "Is Neptune bigger than Earth?"
+    answer: "Yes"
+      }
+   
+  ])
   );

@@ -3,6 +3,7 @@
     <img src="../../assets/space_header.png" id="image-header" >
     <navbar-element v-for="(planet, index) in planets" :key="index" :planet="planet"/>
     <h1 class="title" v-on:click="selectPage()">Solar</h1>
+    
   </div>
 </template>
 
