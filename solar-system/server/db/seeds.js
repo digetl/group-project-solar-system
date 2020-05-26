@@ -84,7 +84,7 @@ db.planets.insertMany([
     meanTemp: -65,
     description: "Mars is the fourth planet from the Sun and is the second smallest planet in the solar system. Named after the Roman god of war, Mars is also often described as the “Red Planet” due to its reddish appearance. Mars is a terrestial planet with a thin atmosphere composed primarily of carbon dioxide.",
     images: {
-      mainPic:"mars-pic.jpg",
+      mainPic:"mars-pic.png",
       hoverGif:"mars.gif"}
   },
   {
@@ -114,7 +114,7 @@ db.planets.insertMany([
     distanceFromSun: 1433.5,
     orbitalPeriod: 10747,
     meanTemp: -140,
-    description: "Best known for its fabulous ring system, Saturn is the sixth planet from the Sun and the second largest in our solar system. Like Jupiter, Saturn is a gas giant and is composed of similar gasses including hydrogen, helium and methane.",
+    description: "Saturn is the sixth planet from the Sun and the second largest in our solar system. Best known for its fabulous ring system! Like Jupiter, Saturn is a gas giant and is composed of similar gasses including hydrogen, helium and methane.",
     images: {
       mainPic:"saturn-pic.png",
       hoverGif:"saturn.gif"}
