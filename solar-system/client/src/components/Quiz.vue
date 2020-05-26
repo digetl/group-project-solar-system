@@ -1,16 +1,14 @@
 <template>
   <div class="quiz-container">
-      <!-- v-model -->
-
 
     <div>
       <h2> Wich planet is the bigger? </h2>
       <div>
-        <P v-if="planet1" >{{planet1.name}}</P>
-        <P v-if="planet2" >{{planet2.name}}</P>
+        <P v-if="planet1" v-on:click="answerQuestion1(planet1)">{{planet1.name}}</P>
+        <P v-if="planet2" v-on:click="answerQuestion1(planet2)">{{planet2.name}}</P>
       </div>
 
-      <div>
+      <div v-if="showResult1">
         <p v-if="answer1">correct answer</p>
         <p v-if="!answer1">sorry wrong answer</p>
       </div>
@@ -59,7 +57,8 @@ export default {
     return {
       planet1: null,
       planet2: null,
-      answer1: null
+      answer1: null,
+      showResult1: null
     }
   },
   mounted() {
@@ -67,32 +66,24 @@ export default {
   },
   methods: {
     randomNum() {
-      return Math.floor(Math.random()*8) + 1
+      return Math.floor(Math.random()*9 + 1)
     },
     selectRandomPlanets() {
       this.planet1 = this.planets[this.randomNum()];
       this.planet2 = this.planets[this.randomNum() ];
 
-      if(this.planet1 === this.planet2) {
+      while(this.planet1 === this.planet2) {
         this.planet2 = this.planets[this.randomNum()];
       }
     },
-    answerQuestion1() {
+    answerQuestion1(selectAnswer) {
       let correctAnswer = null;
 
-      if(this.planet1.diameter > this.planet2.diameter) {
-        correctAnswer = planet1;
-      } 
-      else {
-        correctAnswer = planet2;
-      }
+      (this.planet1.diameter > this.planet2.diameter) ? correctAnswer = this.planet1 : correctAnswer = this.planet2;
 
-      if(correctAnswer === this.answer1) { 
-        return true 
-      }
-      else {
-        return false
-      }
+      (correctAnswer === selectAnswer) ? this.answer1 = true : this.answer1 = false;
+      
+      this.showResult1 = true;
     }
   }
 }
