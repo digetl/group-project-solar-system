@@ -2,8 +2,11 @@
   <div id="front-page">
     <div>
     <img id="info-bird-view" v-if="hover" :style="coor" :src="imageLink"/>
-    <img src="../../assets/space_rings.png" id="bird-view" usemap="#bird-view-map"/>
+    <img src="../../assets/planets_birds-01.png" id="bird-view" usemap="#bird-view-map"/>
     <map name="bird-view-map">
+      <area shape="circle" coords="400, 400, 70" alt="sun" href="#" v-on:click="selectPlanet(0)"
+        v-on:mouseover="showInfo($event, 0)" 
+        v-on:mouseleave="hover = false">
       <area shape="circle" coords="495, 399, 10" alt="mercury" href="#" v-on:click="selectPlanet(1)"
         v-on:mouseover="showInfo($event, 1)" 
         v-on:mouseleave="hover = false">
@@ -59,7 +62,13 @@ export default {
       eventBus.$emit("selected-planet", this.planets[id]);
     },
     showInfo(event, id) {
-      this.coor = `top: ${event.offsetY}px; left: ${event.offsetX}px`
+      console.log(event);
+
+      let heightOffset = 0;
+      if(event.offsetY >= 520 ) {heightOffset = -110}
+      if(event.offsetY <= 220) {heightOffset = 110}
+
+      this.coor = `top: ${event.offsetY - 200 + heightOffset}px; left: ${event.pageX + 30}px`
       this.hover = true;
       this.selectedPlanet = this.planets[id];
       this.imageLink = require(`../../assets/${this.selectedPlanet.images.hoverGif}`)
