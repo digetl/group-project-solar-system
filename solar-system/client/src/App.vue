@@ -12,8 +12,8 @@
 
       <front-page v-if="selectedPage === 'front-page'" :planets="planets"/>
       <planet-info v-if="selectedPage === 'planet-info'" :planet="selectedPlanet"/>  
-      <size-comparison v-if="selectedPage === 'sizeCompare'" :planets="planets"/>
       <gravity-animation v-if="selectedPage === 'gravity-animation'" :planets="planets"/>
+      <size-comparison v-if="selectedPage === 'size-comparison'" :planets="planets"/>
     </div>
     <solar-footer class="footer"/>
   </div>
@@ -43,8 +43,7 @@ export default {
     return {
       planets: [],
       selectedPlanet: null,
-      // selectedPage: "front-page",
-      selectedPage: "gravity-animation",
+      selectedPage: "front-page",
       smallStars: [],
       mediumStars: [],
       largeStars: []
@@ -88,12 +87,11 @@ export default {
 </script>
 
 <style>
-
-
-
 #app {
   margin: 0;
 	padding: 0;
+  height: 100%;
+	width: 100%;
 }
 
 #app-body {
@@ -102,7 +100,6 @@ export default {
 	margin: 0;
 	padding: 0;
   position: relative;
-  /* background-image: url("./assets/space_only.png"); */
   color: white;
 
 
@@ -112,8 +109,6 @@ export default {
   background: -webkit-radial-gradient(center, ellipse cover,  #2d343d 0%,#24272a 36%,#0b0f11 100%); /* Chrome10-25,Safari5.1-6 */
   background: radial-gradient(ellipse at center,  #2d343d 0%,#24272a 36%,#0b0f11 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d343d', endColorstr='#0b0f11',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
-  background-size: auto;
 }
 
 .small-stars {
@@ -169,5 +164,4 @@ export default {
     background: rgba(255,255,255,0);
   }
 }
-
 </style>
