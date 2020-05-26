@@ -15,8 +15,8 @@
 
       <div class="row">
           <div class="compare-container">
-              <select id="planet-select" v-model="handleChangePlanet" v-on:change="handleChangePlanet"> 
-                <option v-for="(planet, index) in planets" :key="index" value="planet">{{planet.name}}</option>
+              <select id="planet-select" v-model="planetName" v-on:change="handleChangePlanet()"> 
+                <option v-for="(planet, index) in planets" :key="index">{{planet.name}}</option>
               </select>
          <!-- <h2>Name: {{planet.name}}</h2> -->
          <!-- <p>Diameter: {{planet.diameter.toLocale()}} kilometers</p> -->
@@ -25,7 +25,7 @@
 
           <div class="earth-container">
               <h2>Earth</h2>
-              <h2>Diameter: 127,404 kilometers</h2>
+              <h2>Diameter: 12,740 kilometers</h2>
           </div>
 
       </div>
@@ -44,18 +44,21 @@ export default {
 
   data() {
       return {
-          planet:[],
-          compareRatio: 0
+          planetName: "",
+          planet: null,
+          compareRatio: null
       }
   },
   
     mounted() {
         this.handleChangePlanet()
     },
+    
    methods: {
     handleChangePlanet() {
-        const compareRatio = this.planet.diameter / 127404
-        const planetToChange = document.getElementById("compare-svg")
+        this.planet = this.planets.find(planet => planet.name === this.planetName);
+        this.compareRatio = parseFloat(this.planet.diameter) / 12740
+        planetToChange = document.getElementById("compare-svg")
         planetToChange.style.width = compareRatio
     },
 
