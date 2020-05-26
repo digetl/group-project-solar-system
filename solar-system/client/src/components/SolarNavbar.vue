@@ -21,17 +21,17 @@
 import {eventBus} from "@/main.js";
 
 export default {
-    name:"solar-navbar",
-    props: ["planets"],
-    methods: {
-      selectPage() {
-        eventBus.$emit("selected-page", "front-page");
-      },
-      selectPlanet(number) {
-      eventBus.$emit("selected-page", "planet-info");
-      eventBus.$emit("selected-planet", this.planets[number]);
+  name:"solar-navbar",
+  props: ["planets"],
+  methods: {
+    selectPage() {
+      eventBus.$emit("selected-page", "front-page");
+    },
+    selectPlanet(number) {
+    eventBus.$emit("selected-page", "planet-info");
+    eventBus.$emit("selected-planet", this.planets[number]);
     }
-    }
+  }
 }
 </script>
 
