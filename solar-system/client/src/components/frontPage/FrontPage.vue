@@ -95,6 +95,5 @@ export default {
   height: 400px;
   border: solid;
   border-color: white;
-
 }
 </style>    
