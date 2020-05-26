@@ -9,12 +9,12 @@ export default {
   name: "gravity-animation",
   data() {
     return {
-      gravity: 1.3,
+      gravity: 9.8,
     }
   },
   mounted() {
     this.initAnimation();
-    this.logicTimerReference = setInterval(this.logic, 17);
+    this.logicTimerReference = setInterval(this.logic, 8);
   },
   beforeDestroy() {
     this.canvas = null;
@@ -69,16 +69,19 @@ export default {
     },
 
     logic() {
-      // let x = this.ball.x;
-      let y = this.ball.y
-      
-      if (y <= this.canvas.height - 85) {
-        y += 8;
+      let y = this.ball.y;
+      let yVel = this.ball.yVel
+      let yVelBuffer = yVel;
+
+      yVel += (this.gravity * this.scale) / 125
+      y += (this.ball.yVel / 125);
+
+      if(y >= 350) {
+        yVel = - yVelBuffer;
       }
 
-      // this.ball.x = x;
       this.ball.y = y;
-
+      this.ball.yVel = yVel;
     },
 
     render() {
