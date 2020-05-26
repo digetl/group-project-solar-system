@@ -59,7 +59,7 @@ db.planets.insertMany([
     isPlanet: true,
     moons:["The Moon"],
     massRelativeToEarth: 1,
-    diameter: 12104,
+    diameter: 12742,
     gravity: 9.8,   
     lengthOfDay: 24.6,
     distanceFromSun: 149.6,

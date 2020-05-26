@@ -12,9 +12,9 @@
 
       <front-page v-if="selectedPage === 'front-page'" :planets="planets"/>
       <planet-info v-if="selectedPage === 'planet-info'" :planet="selectedPlanet"/>  
-      <size-comparison v-if="selectedPage === 'sizeCompare'" :planets="planets"/>
+      <size-comparison v-if="selectedPage === 'size-comparison'" :planets="planets"/>
     </div>
-    <!-- <solar-footer class="footer"/> -->
+    <solar-footer class="footer"/>
   </div>
 </template>
 

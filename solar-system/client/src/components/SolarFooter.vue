@@ -6,6 +6,10 @@
 </template>
 
 <script>
+
+import {eventBus} from "@/main.js"
+
+
 export default {
 
     methods: {
@@ -20,6 +24,10 @@ export default {
 .solar-footer {
     padding:0.5% 2%;
     background-color: black;
+}
+
+.solar-footer p{
+    color:white;
 }
 
 </style>
