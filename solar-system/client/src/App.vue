@@ -14,7 +14,7 @@
       <planet-info v-if="selectedPage === 'planet-info'" :planet="selectedPlanet"/>  
       <size-comparison v-if="selectedPage === 'sizeCompare'" :planets="planets"/>
     </div>
-    <solar-footer class="footer"/>
+    <!-- <solar-footer class="footer"/> -->
   </div>
 </template>
 
@@ -91,6 +91,8 @@ export default {
 #app {
   margin: 0;
 	padding: 0;
+  height: 100%;
+	width: 100%;
 }
 
 #app-body {
@@ -103,12 +105,12 @@ export default {
   color: white;
 
 
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#2d343d+0,24272a+36,0b0f11+100 */
-background: #2d343d; /* Old browsers */
-background: -moz-radial-gradient(center, ellipse cover,  #2d343d 0%, #24272a 36%, #0b0f11 100%); /* FF3.6-15 */
-background: -webkit-radial-gradient(center, ellipse cover,  #2d343d 0%,#24272a 36%,#0b0f11 100%); /* Chrome10-25,Safari5.1-6 */
-background: radial-gradient(ellipse at center,  #2d343d 0%,#24272a 36%,#0b0f11 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d343d', endColorstr='#0b0f11',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#2d343d+0,24272a+36,0b0f11+100 */
+  background: #2d343d; /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover,  #2d343d 0%, #24272a 36%, #0b0f11 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover,  #2d343d 0%,#24272a 36%,#0b0f11 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center,  #2d343d 0%,#24272a 36%,#0b0f11 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d343d', endColorstr='#0b0f11',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 .small-stars {

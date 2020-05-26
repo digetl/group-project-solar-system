@@ -19,6 +19,7 @@ export default {
 <style>
 .solar-footer {
     padding:0.5% 2%;
+    background-color: black;
 }
 
 </style>
