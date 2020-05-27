@@ -83,9 +83,7 @@ export default {
       resizePlanets() {
         let ratio = this.planet1.diameter/this.planet2.diameter
 
-
         if(ratio > 1) {
-
           this.stylePlanet1 = `height: ${100}%; width: ${100}%`;
           this.stylePlanet2 = `height: ${1/ratio * 100}%; width: ${1/ratio * 100}%`;
         } else {
