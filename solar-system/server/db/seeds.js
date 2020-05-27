@@ -73,7 +73,7 @@ db.planets.insertMany([
     isPlanet: true,
     moons: ["Phobos", "Deïmos"],
     massRelativeToEarth: 0.107,
-    diameter: 3475,
+    diameter: 6779,
     gravity: 1.6,   
     lengthOfDay: 24.7,
     distanceFromSun: 227.9,
