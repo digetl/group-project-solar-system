@@ -1,38 +1,37 @@
 <template>
   <div>
-    <div class="compare-header">
-      <h1>Compare a planet diameter with another</h1>
-    </div>
-      <div class="row">
-        <div class="compare-container">
-          <div class="planet-holder">
-            <img class="compare" :src="require(`../assets/${planet1.images.mainPic}`)" :style="stylePlanet1" id="planet1"/>
-          </div>
-            <h2>{{planet1.name}}</h2>
-            <h2>Diameter: {{planet1.diameter}} km</h2>
 
-            <select id="planet1-select" v-model="planetName1" v-on:change="handleSelectPlanet1(planetName1)"> 
-                <option v-for="(planet, index) in isPlanet" :key="index">{{planet.name}}</option>
-            </select>
-            
+      <h1 class="compare-header">Compare planet diameters</h1>
+  
+      <div class="planets-pictures">
+        <div class="picture-holder">
+          <img id="planet1" :src="require(`../assets/${planet1.images.mainPic}`)" :style="stylePlanet1" />
+        </div>  
+
+        <div class="picture-holder">
+          <img id="planet2" :src="require(`../assets/${planet2.images.mainPic}`)" :style="stylePlanet2" />
+        </div>  
+      </div>
+
+      <div class="select-planet">
+        <div>
+          <h2 class="select">{{planet1.name}}</h2>
+          <h2 class="select">Diameter: {{planet1.diameter.toLocaleString()}} km</h2>
+
+          <select id="planet1-select" v-model="planetName1" v-on:change="handleSelectPlanet1(planetName1)"> 
+            <option v-for="(planet, index) in isPlanet" :key="index">{{planet.name}}</option>
+          </select>
         </div>
 
-        <div class="spacer"></div>
-
-        <div class="earth-container">
-          <div class="planet-holder">
-            <img class="earth" :src="require(`../assets/${planet2.images.mainPic}`)" :style="stylePlanet2" id="planet2"/>
-          </div>
-            <h2>{{planet2.name}}</h2>
-            <h2>Diameter: {{planet2.diameter}} km</h2>
-             <select id="planet2-select" v-model="planetName2" v-on:change="handleSelectPlanet2(planetName2)"> 
-                <option v-for="(planet, index) in isPlanet" :key="index">{{planet.name}}</option>
-            </select>
+        <div>
+          <h2>{{planet2.name}}</h2>
+          <h2>Diameter: {{planet2.diameter.toLocaleString()}} km</h2>
+          
+          <select id="planet2-select" v-model="planetName2" v-on:change="handleSelectPlanet2(planetName2)"> 
+            <option v-for="(planet, index) in isPlanet" :key="index">{{planet.name}}</option>
+          </select>
         </div>
       </div>
-    
-      
-    
   </div>
 </template>
 
@@ -99,48 +98,25 @@ export default {
 </script>
 
 <style>
-.row {
-  position: relative;
-  padding: 1% 6%;
+
+.planets-pictures {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-family: Roboto,sans-serif;
-  align-items: safe center;
+  justify-content: space-evenly;
 }
-  .compare-container{
-      flex: 40%;    
-      text-align:center;
-  }
-  .earth-container{
-      flex: 40%;
-      text-align:center;
-  }
-  .spacer {
-    padding: 2% 1%;
-  }
-  .earth{
-      width :400px;
-  }
 
- .compare{
-      width :400px;
-  }
+.picture-holder {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: 450px;
+  width: 450px;
+}
 
-  .row h2{
-      text-align: center;
-  }
-
-  .compare-header{
-    font-weight: 400;
-    padding:1rem 0 0 0;
-    text-align: center;
-
-  }
-
-  .planet-holder {
-    height: 450px;
-    width: 450px;
-  }
+.select-planet {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
 
 </style>
