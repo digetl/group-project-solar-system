@@ -3,15 +3,15 @@
     <solar-navbar :planets="planets"/>
 
     <div id="app-body">
-      <div class="stars">
+      <!-- <div class="stars">
     	  <div class="small" v-for="(star) in smallStars" :key="star.key" :style="star.style"></div>
       	<div class="medium" v-for="(star) in mediumStars" :key="star.key" :style="star.style"></div>
     	  <div class="large" v-for="(star) in largeStars" :key="star.key" :style="star.style"></div>
-      </div>
+      </div> -->
 
       <front-page v-if="selectedPage === 'front-page'" :planets="planets"/>
       <planet-info v-if="selectedPage === 'planet-info'" :planet="selectedPlanet"/>  
-      <gravity-animation v-if="selectedPage === 'gravity-animation'" :planets="planets" :planet="selectedPlanet"/>
+      <gravity-animation v-if="selectedPage === 'gravity-animation'" :planets="planets"/>
       <size-comparison v-if="selectedPage === 'size-comparison'" :planets="planets"/>
       <quiz v-if="selectedPage === 'quiz'" :planets="planets"/>
     </div>

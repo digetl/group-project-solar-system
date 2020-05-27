@@ -44,8 +44,8 @@ export default {
 
   data() {
       return {
-          planetName1: "",
-          planetName2: "",
+          planetName1: "venus",
+          planetName2: "earth",
           planet1: this.planets[2],
           planet2: this.planets[3],
           stylePlanet1: "",
@@ -59,7 +59,7 @@ export default {
     computed: {
        isPlanet: function() {
        return this.planets.filter(function(planet) {
-         return planet.name !== "asteroid belt" 
+         return planet.name !== "Asteroid Belt" 
        })
     }
     },
@@ -82,6 +82,13 @@ export default {
 
       resizePlanets() {
         let ratio = this.planet1.diameter/this.planet2.diameter
+        
+        if(this.planetName1 === "Saturn") {
+          ratio = ratio/0.6
+        }
+        if(this.planetName2 === "Saturn") {
+          ratio = ratio*0.6
+        }
 
         if(ratio > 1) {
           this.stylePlanet1 = `height: ${100}%; width: ${100}%`;
@@ -89,15 +96,6 @@ export default {
         } else {
           this.stylePlanet2 = `height: ${100}%; width: ${100}%`;
           this.stylePlanet1 = `height: ${ratio * 100}%; width: ${ratio * 100}%;`
-        }
-      },
-
-      fixSaturn(planet) {
-        if(planet.name === "saturn") {
-          return 1.55
-        }
-        else {
-          return 1
         }
       }
   }
@@ -125,6 +123,7 @@ export default {
 .select-planet {
   display: flex;
   align-items: center;
+  padding-bottom: 20px;
   justify-content: space-evenly;
 }
 .compare-header {

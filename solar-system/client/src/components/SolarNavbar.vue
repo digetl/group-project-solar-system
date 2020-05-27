@@ -100,7 +100,7 @@ export default {
   border: solid;
   border-width: 1px;
   border-color: black;
-  border-radius: 10%;
+  border-radius: 2px;
   background: white;
   /* justify-self: left; */
 }
