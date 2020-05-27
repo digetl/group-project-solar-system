@@ -1,15 +1,19 @@
 <template>
   <div>
+    <div class="compare-header">
+      <h1>Compare a planets diameter with Earth</h1>
+    </div>
       <div class="row">
         <div class="compare-container">
-            <img class="compare-svg" src="../assets/compare.svg" id="mercury"/>
+            <img class="compare" src="../assets/mars-pic.png" id="planet"/>
         </div>
 
         <div class="spacer"></div>
 
         <div class="earth-container">
-            <img class="earth-svg" src="../assets/earth.svg" id="earth" />
-            
+            <img class="earth" src="../assets/earth-pic.png" id="earth" />
+            <h2>Earth</h2>
+            <h2>Diameter: 12,740 kilometers</h2>
         </div>
       </div>
     
@@ -17,22 +21,14 @@
       <div class="row">
           <div class="compare-container">
               <select id="planet-select" v-model="planetName" v-on:change="handleChangePlanet()"> 
-                <option v-for="(planet, index) in planets" :key="index">{{planet.name}}</option>
+                <option v-for="(planet, index) in isPlanet" :key="index">{{planet.name}}</option>
               </select>
-         <!-- <h2>Name: {{planet.name}}</h2> -->
-         <!-- <p>Diameter: {{planet.diameter.toLocale()}} kilometers</p> -->
           </div>
 
-          <div class="earth-container">
-              <h2>Earth</h2>
-              <h2>Diameter: 12,740 kilometers</h2>
-          </div>
+          
       </div>
 
-      <div class="earth-container">
-        <h2>Earth</h2>
-        <h2>Diameter: 127,404 kilometers</h2>
-      </div>
+      
     
   </div>
 </template>
@@ -43,69 +39,82 @@ import {eventBus} from "@/main.js";
 export default {
   name: "size-comparison",
   props: ["planets"],
-  
 
   data() {
       return {
           planetName: "",
-          planet: null,
-          compareRatio: null
-      }
+          findPlanets: null,
+          compareRatio: null,
+          }
   },
   
     mounted() {
         this.handleChangePlanet()
+      },
+
+    computed: {
+       isPlanet: function() {
+       return this.planets.filter(function(planet) {
+         return planet.isPlanet
+       })
+    }
     },
     
    methods: {
-    handleChangePlanet() {
-        this.planet = this.planets.find(planet => planet.name === this.planetName);
-        this.compareRatio = parseFloat(this.planet.diameter) / 12740
-        planetToChange = document.getElementById("compare-svg")
-        planetToChange.style.width = compareRatio
-    },
+      handleChangePlanet() {
+          this.planet = this.planets.find(planet => planet.name === this.planetName);
+          this.compareRatio = parseFloat(this.planet.diameter) / 12740
+          planetToChange = document.getElementById("compare-svg")
+          planetToChange.style.width = compareRatio
+      },
 
-    selectPage() {
-      eventBus.$emit("selected-page", "size-comparison");
-      eventBus.$emit("selected-planet", this.planet);
-    },
+      selectPage() {
+        eventBus.$emit("selected-page", "size-comparison");
+        eventBus.$emit("selected-planet", this.planet);
+      },
 
-    findSizeRatio() {
-      const earth = 1
-    // suedo code   compareRatio = this.planet.diameter / 127404
+      findSizeRatio() {
+        const earth = 1
+      // suedo code   compareRatio = this.planet.diameter / 127404
+      }
     }
-  }
 }
 </script>
 
 <style>
 .row {
   position: relative;
-  padding: 4% 6%;
+  padding: 1% 6%;
   display: flex;
   font-family: Roboto,sans-serif;
   align-items: safe center;
 }
   .compare-container{
-      flex: 40%;     
+      flex: 40%;    
+      text-align:center;
   }
   .earth-container{
       flex: 40%;
+      text-align:center;
   }
   .spacer {
     padding: 2% 1%;
   }
-  .earth-svg{
-      width :75%;
+  .earth{
+      width :400px;
   }
 
- .compare-svg{
-      width :55%;
-      filter: grayscale(1);
-      filter: hue-rotate(3.142rad);
+ .compare{
+      width :320px;
   }
 
   .row h2{
       text-align: center;
+  }
+
+  .compare-header{
+    font-weight: 400;
+    padding:1rem 0 0 0;
+    text-align: center;
   }
 </style>
