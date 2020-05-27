@@ -167,7 +167,7 @@ db.planets.insertMany([
   {
     name: "The Moon",
     isPlanet: false,
-    moons: [],
+    moons: null,
     massRelativeToEarth: 0.12,
     diameter: 3475,
     gravity: 1.6,   
@@ -179,6 +179,22 @@ db.planets.insertMany([
     images: {
       mainPic:"moon-pic.png",
       hoverGif:"moon.gif"}
+  },
+  {
+    name: "Asteroid Belt",
+    isPlanet: false,
+    moons: [],
+    massRelativeToEarth: 3.3,
+    diameter: 140000000,
+    gravity: null,   
+    lengthOfDay: null,
+    distanceFromSun: 375,
+    orbitalPeriod: null,
+    meanTemp: -90,
+    description: "The asteroid belt is a torus-shaped region in the Solar System, located roughly between the orbits of the planets Jupiter and Mars, that is occupied by a great many solid, irregularly shaped bodies, of many sizes but much smaller than planets, called asteroids or minor planets.",
+    images: {
+      mainPic:"asteroid.png",
+      hoverGif:"asteroid.gif"}
   }]
 
   );

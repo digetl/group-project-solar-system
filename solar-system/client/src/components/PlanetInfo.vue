@@ -6,11 +6,11 @@
     <div class="column2">
       <h3>{{planet.description}}</h3>
       <p v-if="planet.moons.length">Number of Moons: <strong>{{planet.moons.length}}</strong></p>
-      <p>Mass: <strong>{{planet.massRelativeToEarth}} relative to Earth</strong></p>
-      <p>Diameter: <strong>{{planet.diameter.toLocaleString()}} kilometers</strong></p>
-      <p>Gravity: <strong>{{planet.gravity}} g</strong></p>
-      <p>Length of day: <strong>{{planet.lengthOfDay}} hours</strong></p>
-      <p>Distance from the Sun: <strong>{{planet.distanceFromSun.toLocaleString()}} million kilometers</strong></p> 
+      <p v-if="planet.massRelativeToEarth">Mass: <strong>{{planet.massRelativeToEarth}} relative to Earth</strong></p>
+      <p v-if="planet.diameter">Diameter: <strong>{{planet.diameter.toLocaleString()}} kilometers</strong></p>
+      <p v-if="planet.gravity">Gravity: <strong>{{planet.gravity}} g</strong></p>
+      <p v-if="planet.lengthOfDay">Length of day: <strong>{{planet.lengthOfDay}} hours</strong></p>
+      <p v-if="planet.distanceFromSun">Distance from the Sun: <strong>{{planet.distanceFromSun.toLocaleString()}} million kilometers</strong></p> 
     </div>
   </div>
 </template>
