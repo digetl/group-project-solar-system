@@ -5,7 +5,7 @@ db.planets.insertMany([
   {
     name: "Sun",
     isPlanet: false,
-    moons: [],
+    moons: null,
     massRelativeToEarth: 332946,
     diameter: 1390000,
     gravity: 274,   
@@ -22,7 +22,7 @@ db.planets.insertMany([
   {
     name: "Mercury",
     isPlanet: true,
-    moons: [],
+    moons: null,
     massRelativeToEarth: 0.0553,
     diameter: 4879,
     gravity: 3.7,   
@@ -38,7 +38,7 @@ db.planets.insertMany([
   {
     name: "Venus",
     isPlanet: true,
-    moons: [],
+    moons: null,
     massRelativeToEarth: 0.815,
     diameter: 12104,
     gravity: 8.9,   
@@ -183,7 +183,7 @@ db.planets.insertMany([
   {
     name: "Asteroid Belt",
     isPlanet: false,
-    moons: [],
+    moons: null,
     massRelativeToEarth: 3.3,
     diameter: 140000000,
     gravity: null,   

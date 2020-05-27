@@ -31,6 +31,9 @@
       <area shape="circle" coords="104, 150, 33" alt="neptune" href="#" v-on:click="selectPlanet(8)" 
         v-on:mouseenter="showInfo($event, 8)" 
         v-on:mouseleave="hover = false">
+      <area shape="circle" coords="252, 360, 8" alt="moon" href="#" v-on:click="selectPlanet(10)" 
+        v-on:mouseenter="showInfo($event, 10)" 
+        v-on:mouseleave="hover = false">
       <!-- <area shape="circle" coords="337, 78, 10" alt="pluto" v-on:click="selectPlanet(9)"> -->
     </map>
     </div>
