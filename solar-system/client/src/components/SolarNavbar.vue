@@ -7,7 +7,7 @@
       <area shape="circle" coords="372, 77, 13" alt="venus" v-on:click="selectPlanet(2)" href="#">
       <area shape="circle" coords="421, 77, 13" alt="earth" v-on:click="selectPlanet(3)" href="#">
       <area shape="circle" coords="459, 77, 9" alt="mars" v-on:click="selectPlanet(4)" href="#">
-      <area shape="rect" coords="475, 30, 490, 125" alt="asteroid-belt" href="#">
+      <area shape="rect" coords="475, 30, 490, 125" alt="asteroid-belt" v-on:click="selectPlanet(11)" href="#">
       <area shape="circle" coords="533, 77, 30" alt="jupiter" v-on:click="selectPlanet(5)" href="#">
       <area shape="circle" coords="608, 77, 25" alt="saturn" v-on:click="selectPlanet(6)" href="#">
       <area shape="circle" coords="674, 77, 20" alt="uranus" v-on:click="selectPlanet(7)" href="#">
