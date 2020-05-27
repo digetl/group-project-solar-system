@@ -33,9 +33,9 @@
       <area shape="circle" coords="726, 77, 17" alt="neptune" v-on:click="selectPlanet(8)" href="#"
         v-on:mouseenter="showName($event, 8)" 
         v-on:mouseleave="hover = false">
-      <area shape="circle" coords="337, 78, 10" alt="pluto" v-on:click="selectPlanet(9)" href="#"
+      <!-- <area shape="circle" coords="337, 78, 10" alt="pluto" v-on:click="selectPlanet(9)" href="#"
         v-on:mouseenter="showName($event, 9)" 
-        v-on:mouseleave="hover = false">
+        v-on:mouseleave="hover = false"> -->
       <area shape="circle" coords="422, 95, 3" alt="moon" v-on:click="selectPlanet(10)" href="#"
         v-on:mouseenter="showName($event, 10)" 
         v-on:mouseleave="hover = false">
