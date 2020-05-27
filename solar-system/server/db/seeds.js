@@ -17,9 +17,6 @@ db.planets.insertMany([
     images: {
       mainPic:"sun-pic.png",
       hoverGif:"sun.gif"}
-    
-      
-
   },
   
   {
