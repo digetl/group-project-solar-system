@@ -2,6 +2,7 @@
   <div id="front-page">
     <div>
     <img id="info-bird-view" v-if="hover" :style="coor" :src="imageLink"/>
+    
     <img src="../assets/planets_birds-01.png" id="bird-view" usemap="#bird-view-map"/>
     <map name="bird-view-map">
       <area shape="circle" coords="405, 405, 68" alt="sun" href="#" v-on:click="selectPlanet(0)"
