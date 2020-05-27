@@ -59,7 +59,7 @@ export default {
     computed: {
        isPlanet: function() {
        return this.planets.filter(function(planet) {
-         return planet.isPlanet
+         return planet.name !== "asteroid belt" 
        })
     }
     },
@@ -83,14 +83,24 @@ export default {
       resizePlanets() {
         let ratio = this.planet1.diameter/this.planet2.diameter
 
+
         if(ratio > 1) {
+
           this.stylePlanet1 = `height: ${100}%; width: ${100}%`;
           this.stylePlanet2 = `height: ${1/ratio * 100}%; width: ${1/ratio * 100}%`;
         } else {
           this.stylePlanet2 = `height: ${100}%; width: ${100}%`;
           this.stylePlanet1 = `height: ${ratio * 100}%; width: ${ratio * 100}%;`
         }
-        ratio = 1;
+      },
+
+      fixSaturn(planet) {
+        if(planet.name === "saturn") {
+          return 1.55
+        }
+        else {
+          return 1
+        }
       }
   }
 }
@@ -100,6 +110,7 @@ export default {
 <style>
 
 .planets-pictures {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -118,5 +129,8 @@ export default {
   align-items: center;
   justify-content: space-evenly;
 }
-
+.compare-header {
+  padding: 0.5rem 0;
+  text-align: center;
+}
 </style>

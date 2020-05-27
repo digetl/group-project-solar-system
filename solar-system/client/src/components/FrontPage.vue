@@ -1,6 +1,6 @@
 <template lang="html">
   <div id="front-page">
-    <div>
+    <div id="center-map">
     <img id="info-bird-view" v-if="hover" :style="coor" :src="imageLink"/>
     
     <img src="../assets/planets_birds-01.png" id="bird-view" usemap="#bird-view-map"/>
@@ -81,8 +81,11 @@ export default {
   align-items: center;
 }
 
-#bird-view {
+#center-map {
   margin: 5%;
+}
+
+#bird-view {
   height: 800px;
 }
 
