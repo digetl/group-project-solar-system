@@ -1,9 +1,8 @@
 <template>
   <div class="solar-footer">
-    <p>Links:</p>
-    <p v-on:click="selectSize()" href="#">Size comparison</p>
-    <p v-on:click="selectQuiz()" href="#">Quiz</p>
-    <p v-on:click="selectGravity()" href="#">Gravity animation</p>
+    <a href="#" v-on:click="selectSize()">Size comparison</a>
+    <a href="#" v-on:click="selectQuiz()">Quiz</a>
+    <a href="#" v-on:click="selectGravity()">Gravity animation</a>
   </div>
 </template>
 
@@ -33,10 +32,16 @@ export default {
 .solar-footer {
     padding:0.5% 2%;
     background-color: black;
+    text-align: center;
 }
 
-.solar-footer p{
-    color:white;
+a {
+  color:white;
+  margin: 1rem;
+  text-decoration: none;
 }
 
+a:hover {
+  color:rgb(218, 228, 17)
+}
 </style>

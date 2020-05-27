@@ -81,6 +81,7 @@ export default {
 
       (this.planet1.diameter > this.planet2.diameter) ? correctAnswer = this.planet1 : correctAnswer = this.planet2;
 
+      
       (correctAnswer === selectAnswer) ? this.answer1 = true : this.answer1 = false;
       
       this.showResult1 = true;

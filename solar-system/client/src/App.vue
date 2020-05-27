@@ -96,6 +96,7 @@ export default {
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 #app {
+  position: relative;
   margin: 0;
 	padding: 0;
   height: 100%;
