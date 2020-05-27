@@ -12,6 +12,7 @@
             
         </div>
       </div>
+    
 
       <div class="row">
           <div class="compare-container">
@@ -20,18 +21,20 @@
               </select>
          <!-- <h2>Name: {{planet.name}}</h2> -->
          <!-- <p>Diameter: {{planet.diameter.toLocale()}} kilometers</p> -->
-
           </div>
 
           <div class="earth-container">
               <h2>Earth</h2>
               <h2>Diameter: 12,740 kilometers</h2>
           </div>
-
       </div>
 
+      <div class="earth-container">
+        <h2>Earth</h2>
+        <h2>Diameter: 127,404 kilometers</h2>
+      </div>
+    
   </div>
-
 </template>
 
 <script>
@@ -68,7 +71,7 @@ export default {
     },
 
     findSizeRatio() {
-        const earth = 1
+      const earth = 1
     // suedo code   compareRatio = this.planet.diameter / 127404
     }
   }
@@ -101,8 +104,6 @@ export default {
       filter: grayscale(1);
       filter: hue-rotate(3.142rad);
   }
-
-
 
   .row h2{
       text-align: center;

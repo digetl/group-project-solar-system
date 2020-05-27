@@ -17,9 +17,6 @@ db.planets.insertMany([
     images: {
       mainPic:"sun-pic.png",
       hoverGif:"sun.gif"}
-    
-      
-
   },
   
   {
@@ -183,4 +180,5 @@ db.planets.insertMany([
       mainPic:"moon-pic.png",
       hoverGif:"moon.gif"}
   }]
+
   );
