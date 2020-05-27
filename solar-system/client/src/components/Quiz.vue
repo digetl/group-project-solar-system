@@ -2,7 +2,7 @@
   <div class="quiz-container">
 
     <div>
-      <h2> Wich planet is the bigger? </h2>
+      <h2> Which planet is the bigger? </h2>
       <div>
         <P v-if="planet1" v-on:click="answerQuestion1(planet1)">{{planet1.name}}</P>
         <P v-if="planet2" v-on:click="answerQuestion1(planet2)">{{planet2.name}}</P>

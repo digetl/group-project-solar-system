@@ -39,8 +39,7 @@
 
 <script>
 import {eventBus} from "@/main.js"
-import PlanetsElement from "./PlanetElement"
-import Quiz from "../Quiz.vue";
+import Quiz from "./Quiz.vue";
 
 export default {
   name: "front-page",

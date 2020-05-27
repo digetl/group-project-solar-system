@@ -1,9 +1,9 @@
 <template>
   <div class="solar-footer">
     <p>Links:</p>
-    <p v-on:click="selectPage()" href="#">Size comparison</p>
-    <p v-on:click="selectPage()" href="#">Quiz</p>
-    <p v-on:click="selectPage()" href="#">Gravity animation</p>
+    <p v-on:click="selectSize()" href="#">Size comparison</p>
+    <p v-on:click="selectQuiz()" href="#">Quiz</p>
+    <p v-on:click="selectGravity()" href="#">Gravity animation</p>
   </div>
 </template>
 
@@ -16,9 +16,13 @@ export default {
 
     
   methods: {
-    selectPage() {
-      eventBus.$emit("selected-page", "quiz");
+    selectSize() {
       eventBus.$emit("selected-page", "size-comparison");
+    },
+    selectQuiz() {
+      eventBus.$emit("selected-page", "quiz");
+    },
+    selectGravity() {
       eventBus.$emit("selected-page", "gravity-animation");
     }
   }
