@@ -140,7 +140,7 @@ export default {
 #rocket-pic {
   position: absolute;
   top: 5%;
-  left: 40%;
+  left: 45%;
   height: 150px; 
 }
 
