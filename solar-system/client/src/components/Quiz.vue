@@ -2,48 +2,20 @@
   <div class="quiz-container">
 
     <div>
-      <h2> Which planet is the bigger? </h2>
+      <h2> Which planet is larger? </h2>
       <div>
         <P v-if="planet1" v-on:click="answerQuestion1(planet1)">{{planet1.name}}</P>
         <P v-if="planet2" v-on:click="answerQuestion1(planet2)">{{planet2.name}}</P>
       </div>
 
       <div v-if="showResult1">
-        <p v-if="answer1">correct answer</p>
-        <p v-if="!answer1">sorry wrong answer</p>
+        <p class="correct-answer" v-if="answer1">correct answer</p>
+        <p class="incorrect-answer" v-if="!answer1">sorry wrong answer</p>
       </div>
 
     </div>
-
-
-    <!-- <form>
-      <h2>Space Quiz</h2> -->
-      <!-- <br> -->
-      <!-- <h4>Which planet is closest to the Sun?</h4>
-      <select name="planet" id="planet">
-        <option v-for="(planet, index) in planets" :value="index">{{ planet.name }}</option>
-      </select> -->
-
-      <!-- mercury -->
-
-      <!-- <h4>Which planet is the biggest in the solar system?</h4>
-      <select name="planet" id="planet">
-        <option v-for="(planet, index) in planets" :value="index">{{ planet.name }}</option> -->
-      <!-- </select> -->
-    
-
-      <!-- jupiter -->
-    
-      <!-- <h4>Does Venus have a moon?</h4>
-      <input id="" name="questionButton" type="radio" value="">Yes</input>
-      <input id="" name="questionButton" type="radio" value="">No</input> -->
-    <!-- <br> -->
-  
-    <!-- <input type="submit" value="Submit answers"> -->
-    <!-- </form> -->
 </div>
   
-
 </template>
 
 <script>
@@ -92,4 +64,24 @@ export default {
 </script>
 
 <style>
+.quiz-container{
+  padding: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.correct-answer{
+  border: solid;
+  color: rgb(47, 201, 47);
+  size: 50px;
+  border-width: 3px;;
+  padding: 0 2%;
+}
+.incorrect-answer{
+  border: solid;
+  color: rgb(226, 12, 12);
+  size: 50px;
+  border-width: 3px;;
+  padding: 0 2%;
+}
 </style>
