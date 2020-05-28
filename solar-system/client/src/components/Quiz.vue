@@ -79,7 +79,7 @@ export default {
 }
 .incorrect-answer{
   border: solid;
-  color: rgb(226, 12, 12);
+  color: rgb(250, 97, 50);
   size: 50px;
   border-width: 3px;;
   padding: 0 2%;
