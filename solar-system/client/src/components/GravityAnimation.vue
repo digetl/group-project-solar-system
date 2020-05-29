@@ -56,9 +56,9 @@ export default {
     resetAnimation() {
       if(this.frameTimerReference) window.cancelAnimationFrame(this.frameTimerReference);
       if(this.logicTimerReference) window.clearInterval(this.logicTimerReference);
-
+      // console.log(this.logicTimerReference)
+      // console.log(this.frameTimerReference)
       this.initAnimation();
-      this.logicTimerReference = setInterval(this.logic, 8);
     },
 
     initAnimation() {
@@ -83,7 +83,6 @@ export default {
 
       this.img = new Image();
       this.img.onload = () => {
-        console.log("the image is loaded")
         this.frameTimerReference = window.requestAnimationFrame(this.render);
         this.logicTimerReference = setInterval(this.logic, 8);
       };
@@ -130,7 +129,7 @@ export default {
 
     render() {
       this.drawFrame()
-      this.frameTimerReference = window.requestAnimationFrame(this.render);
+      window.requestAnimationFrame(this.render);
     }
   }
 }
