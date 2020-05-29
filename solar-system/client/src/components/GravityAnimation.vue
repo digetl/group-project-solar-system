@@ -40,12 +40,12 @@ export default {
     this.frameTimerReference = this.initAnimation();
   },
   beforeDestroy() {
+    if(this.logicTimerReference) window.clearInterval(this.logicTimerReference);
+    if(this.frameTimerReference) window.cancelAnimationFrame(this.frameTimerReference);
     this.canvas = null;
     this.ctx = null;
     this.scale = null;
     this.ball = null;
-    if(this.frameTimerReference) window.cancelAnimationFrame(this.frameTimerReference);
-    if(this.logicTimerReference) window.clearInterval(this.logicTimerReference);
   },
   methods: {
 
@@ -128,8 +128,10 @@ export default {
     },
 
     render() {
-      this.drawFrame()
-      window.requestAnimationFrame(this.render);
+      if(this.ctx) {
+        this.drawFrame()
+        window.requestAnimationFrame(this.render);
+      }
     }
   }
 }
